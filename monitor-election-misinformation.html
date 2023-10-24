@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="title" content="Monitor election (mis)information" />
+    <meta name="description" content="Our first attempt in Latin America" />
+    <meta name="author" content="Yuki" />
+    <meta property="og:title" content="Monitor election (mis)information" />
+    <meta
+      property="og:image"
+      content="https://informationtracer.com/images/monitor-election-misinformation/post-bg.png"
+    />
+    <meta
+      property="og:description"
+      content="Our first attempt in Latin America"
+    />
+    <meta
+      property="og:url"
+      content="https://informationtracer.com/blog/monitor-election-misinformation.html"
+    />
+    <title>
+      Monitor election (mis)information -- our first attempt in Latin America
+    </title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      .centered-div {
+        text-align: center;
+      }
+      .graph-container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="https://informationtracer.com/"
+          >Information Tracer</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto py-4 py-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link px-lg-3 py-3 py-lg-4"
+                href="https://informationtracer.com/"
+                target="_blank"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link px-lg-3 py-3 py-lg-4"
+                href="https://informationtracer.com/blog"
+                target="_blank"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header
+      class="masthead"
+      style="background-image: url('assets/img/twitter-stocks.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="post-heading">
+              <h1>Story Behind the Price Change of Stock and Social Media Sentiment Trends</h1>
+              <h2 class="subheading">What we can learn from the Bud Light Boycott 2023?</h2>
+              <span class="meta">
+                Authored by Yifei Gao, posted on October 24, 2023
+                <!-- <a href="#!">Start Bootstrap</a> -->
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <h2 class="section-heading">Executive Summary</h2>
+            <br />
+            <ul>
+              <li>
+                This blog is mainly focused on the exploration of impact of Social media to the movement of the stock price and effect on the related company using the example of the 2023 Bud Light Boycott. 
+              </li>
+              <li>
+                The cause and influence of the example are investigated using Information Tracer, and discussion on the benefit of using social media to reflect and predict the investor sentiments are presented. 
+              </li>
+            </ul>
+
+            <h2 class="section-heading">Introduction: </h2>
+            <br />
+            <h3>A bit of Background of Social Media and Myself</h3>
+            <p>Social media has transcended its initial purpose as a platform for sharing personal experiences and connecting with friends. Over the past decade, it has emerged as a formidable force in the world of financial markets, profoundly shaping investment decisions and market behavior. 
+            </p>
+            <p>
+             Had been working at an event-driven hedge fund, my firsthand experience working at an event-driven Hedge Fund has allowed me to witness this transformation up close. Portfolio managers, like those I worked with, closely monitor platforms such as Twitter, where tweets become the pulse of market sentiment. In this age of digital connection, understanding the collective voice of the online community is vital for investors seeking to decipher the market's moods and make informed trading decisions.
+            </p>
+            <p>As we navigate through this blog, we will uncover the correlation between social media posts and changes in stock prices, particularly in the context of a specific case involving the advertisement controversy of Anheuser-Busch InBev SA/NV (AB InBev). This intriguing case study will serve as a lens through which we explore the intricate dynamics of this correlation.
+            </p>
+              <h3>A Quick Recap of the Whole Story</h3>
+                          <div class="centered-div">
+              <a href="#!"
+                ><img
+                  class="img-fluid"
+                  src="assets/img/21.png"
+                  alt=Beer Market Share"
+              /></a>
+              <span class="caption text-muted"
+              >Beer Market Share bar plot in 2022 and 2023 from Google</span
+            >
+            </div>
+            <p>
+              AB InBev is the world’s largest and multinational beverage and brewing company based in Belgium. It has a diverse portfolio of brands, such as Budweiser, Harbin, and Corona. Among all the popular products, the company's influence extends far beyond its flagship brand, Bud Light, as it is the top-selling beer for over two decades, holding a significant share of the global beer market. 
+            </p>
+            <p>However, since April 2023 due to the controversial partnership with transgender social media influencer and TV personality Dylan Mulvaney across major social media, Bud Light lost its top title and resulted in an unprecedented  <strong>34% plunge in sales</strong>  over three months, ultimately triggering a substantial <strong> 20% drop in the stock prices of AB InBev</strong>, especially in its American Depository Receipt (ARD) $BUD. This drastic shift was instigated by a groundswell of negative sentiment expressed across major social media, ultimately igniting a firestorm of controversy involving prominent right-wing and conservative figures and beer enthusiasts. 
+            </p>
+              <h3>Outline of This Blog</h3>
+            <p>
+              <li>
+               We will demonstrate the incident chronically and investigate Three major drops in AB InBev’s share value.
+              </li>
+              <li>
+               We will utilize major social media Twitter, Facebook, Instagram, Youtube and Reddit to conduct the research and use keyword search to collect the most popular and influential posts as well as the general sentiment network.
+              </li>
+              <li>
+               The purpose of this blog will not only explore the correlation between social media sentiments and stock price changes but also unveil the influence of key opinion leaders (KOLs) in these events. We will delve into the intricacies of timing and content, examining how specific individuals and their posts have the power to move markets. 
+              </li>
+              <li>
+                 Eventually, we will conclude our investigation on tips and indicators that can potentially be used to detect similar movement in stock price from social media feeds. 
+
+              </li>
+            </ul>  
+            </p>
+            <h3>Stage 0: The bigger picture</h3>
+            <p>
+              First of all, let us take a glance at the general picture. Here is a stock movement of $BUD from the beginning of this year to now using the close price. 
+            </p>
+            <a href="#!"
+              ><img
+                class="img-fluid"
+                src="assets/img/2.png"
+                alt="$BUD"
+            /></a>
+            <span class="caption text-muted"
+              >Stock movement of $BUD Year to Date</span>
+            <p>
+             Noticeably, despite the peak at the end of March because of good annual results in 2022, the stock price has dropped over <strong>10% since the beginning of 2023 </strong>. From March 31st, 2023 to May 31st, 2023, the share price suffered a <strong>20% loss in 2 months</strong>. 
+
+            </p>
+      
+            <p>
+             What can be the cause of this loss? Earnings reports, economic conditions, market sentiment and industry trends are all major factors to affect the stock price. 
+           </p>
+           <p> First of all, AB InBev has its quarterly earnings report in March and June, so we can directly exclude the impact from these reports. Secondly, it is true that the U.S. is suffering from inflation, and it could be the reason due to the reduced consumer spending and rising interest rate. After comparing the change of $BUD price and the performance of the underlying market, even though there are similar patterns based on the average beta 0.84 of $BUD, it seems that the market is not responsible for the drop in $BUD, especially in May.
+            </p><img
+                class="img-fluid"
+                src="assets/img/3.png"
+                alt="$BUD and $SPY"
+            />
+            <span class="caption text-muted"
+              >Stock Price of $BUD and S&P 500 ETF YTD</span>
+            <p>
+              Then, to show the industry trends, here is the comparison between the prices of AB InBev and other major beer brands such as Molson Coors ($TAP) and Constellation Brands ($STZ). We can see that as soon as the price of $BUD dropped, $TAP price roared. And in general, Beer consumption remains stable during the times of recession, and major beer brands have risen during the 2 months period.
+            </p>
+            <img
+                class="img-fluid"
+                src="assets/img/5.png"
+                alt="$BUD and its competitors"
+            />
+            <span class="caption text-muted"
+              >Stock movement of $BUD and its competitors YTD</span>
+            <p>
+              We observed that the overall beer industry in general performed well. And the top competitor $TAP increased dramatically when the $BUD started to lose its value. What could be the reasons left to cause this change? It is not hard to think if the controversy started in April would be the reason. Let us start to dive into the controversy. 
+            </p>
+            <p>
+Based on the stock movement of $BUD, we can divide the changes into three major drops: the drop appeared between April 3rd and April 12th, the drop appeared between April 27th and May 3rd, and the drop between May 4th and May 31st.
+            </p>
+            <img
+                class="img-fluid"
+                src="assets/img/4.png"
+                alt="three drops"
+            />
+            <span class="caption text-muted"
+              >Three major drops</span>
+            <h3>Stage 1: Analysis of major drops</h3>
+            <br />
+            <h5>First drop (April 3rd to April 12th)</h5>
+            <p>
+              On April 1st, the Saturday, Dylan Mulvaney, a transgender actress and a TikTok personality with 10.5 million followers posted a sponsored video in which she appears in an Audrey Hepburn getup and goofs on March Madness. Dylan also showed one can that featured a custom design of her face from Bud Light, to celebrate her one year of transitioning. This was part of a larger campaign to address Bud Light's decline in sales and attract younger audiences with diversity. 
+            </p>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CqgTftujqZc/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/CqgTftujqZc/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/CqgTftujqZc/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Dylan Mulvaney (@dylanmulvaney)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+            <span class="caption text-muted"
+              >Dylan Mulvaney's First Video</span>
+            <p>
+              However, this video quickly triggered enormous negativity from American conservatives. On the next Monday, April 3rd, country singer Kid Rock's viral video, in which he fired shots at Bud Light cases with an MP5 submachine gun while donning a MAGA hat, became a rallying cry for the opposition, with the video garnering over <strong>2 million views</strong>.
+            </p>
+                        <div class="centered-div">
+                     <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/dSmCGySoul">pic.twitter.com/dSmCGySoul</a></p>&mdash; KidRock (@KidRock) <a href="https://twitter.com/KidRock/status/1643090302410936323?ref_src=twsrc%5Etfw">April 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <span class="caption text-muted"
+              >Kid Rock's video on Twitter</span>
+            </div>
+            <p>
+              Starting from Kid Rock’s video on Twitter, the controversial Bud Light and Dylan Mulvaney partnership swiftly sparked a significant backlash from American conservatives and anti-trans groups. Within one day, calls for a boycott of Bud Light and its parent company, Anheuser-Busch, reverberated across social media platforms, and right-wing media figures, including those at Fox News, launched disparaging and transphobic criticisms against Mulvaney.
+            </p>
+            <div class="centered-div">
+            <img
+                class="img-fluid"
+                src="assets/img/6.png"
+                alt="feeds graph"
+            />
+            <span class="caption text-muted"
+              >Information Tracer - social media feeds spreading graph</span>
+            </div>
+            <p>
+             In the following two weeks, this call for a boycott gained momentum, with many consumers refusing to purchase Bud Light or any Anheuser-Busch products at bars or stores. Country artist Travis Tritt joined Kid Rock in supporting the boycott, while singer Ted Nugent vehemently criticized Anheuser-Busch's partnership with Mulvaney, pledging to keep their products out of his world. John Rich, a country music singer-songwriter, also announced that he would no longer sell Anheuser-Busch products at his Nashville bar.
+            </p>
+
+            <div class="centered-div">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I will be deleting all Anheuser-Busch products from my tour hospitality rider. I know many other artists who are doing the same.</p>&mdash; Travis Tritt (@Travistritt) <a href="https://twitter.com/Travistritt/status/1643765186736553984?ref_src=twsrc%5Etfw">April 5, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <span class="caption text-muted"
+              >Tweet from Travis Tritt</span
+            >           
+            <p>
+              On social media, it is interesting to see that among all the active users, @BenShapiro on Facebook and @OliLondon on Twitter are the most active users and opinion distributors, who can be treated as key opinion leaders. Ben Shapiro is known as an American lawyer, columnist, and conservative political commentator with 9.2 million followers; Oli London is an English Internet personality with 262k followers. <strong>Both of them are showing negative sentiments towards Dylan Mulvaney and support for the boycott</strong>.
+            </p>
+            <div class="centered-div">
+            <img
+                class="img-fluid"
+                src="assets/img/11.png"
+                alt="KOLs Collector"
+            />
+            <span class="caption text-muted"
+              >Key Opinion Leaders based on Information Tracer</span>
+            </div>
+            <p>And for all the hashtags related to the keywords across social media that have more than 22k interactions, we found out the following results based on interaction network from Information Tracer and <strong> most of the hashtags are related to the boycott of Bud Light and Nike, which were in partnership with Mulvaney and turned out to be negative overall</strong>. 
+            </p>
+            <div class="graph-container">
+              <div class="graph"><img
+                    class="img-fluid"
+                    src="assets/img/12.png"
+                    alt="hashtags"
+                />
+              </div>
+              <div class="graph"><img
+                    class="img-fluid"
+                    src="assets/img/10.png"
+                    alt="feed sentiments"
+                />
+              </div>
+            </div>
+                        <span class="caption text-muted"
+              >Information Tracer - Interaction network and sentiment network</span
+            >
+            <p>
+             Not longer afterwards, the sales of Bud Light took a direct hit. By the week ending April 8, 2023, Bud Light's sales had already plummeted by <strong>11% nationally</strong>, a distressing indicator of the impact of the boycott.The following week, ending April 15, witnessed an even more drastic downturn, with sales <strong>dropping by a staggering 21%</strong>; $BUD stock price <strong>dropped by 3%</strong>. 
+            </p>
+            <div class="graph-container">
+              <div class="graph">
+                  <img
+                    class="img-fluid"
+                    src="assets/img/17.png"
+                    alt="Price with Events"
+                />
+              </div>
+            </div>
+            <p>
+             As a response, on April 14th Anheuser-Busch's US CEO Brendan Whitworth released a statement that indirectly referred to the Mulvaney-Bud Light partnership.The statement said, "We never intended to be part of a discussion that divides people. We are in the business of bringing people together over a beer."
+            </p><blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/oyyfPzd1FM">pic.twitter.com/oyyfPzd1FM</a></p>&mdash; Anheuser-Busch (@AnheuserBusch) <a href="https://twitter.com/AnheuserBusch/status/1646959620437561356?ref_src=twsrc%5Etfw">April 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <span class="caption text-muted"
+              >Tweet From AB InBev</span
+            >
+            <p>
+              Even though the stock price and sales went up in the following week, the general feedback across major social media is negative; specifically, the most common sentiment is anger after gathering all the feeds that contain the keywords “Brandan Whitworth” and “Anheuser-Busch”, which potentially lead to the second drop on $BUD. 
+            </p>
+            <h5>Second drop (April 27th to May 3rd)</h5>
+            </p><img
+                class="img-fluid"
+                src="assets/img/13.png"
+                alt="Spreading Graph"
+            />
+            <span class="caption text-muted"
+              >Interaction Cumulative Graph during the Second Drop</span
+            >
+            <p>
+            <p>
+              The boycott started to add criticism and pressure on the Vice president of Marketing for Bud Light, Alissa Heinerscheid, who was in charge of the marketing decision and promoted inclusivity. Especially on Twitter and Facebook, Alissa was largely targeted for harassment on the decline in sales and brand reputation. People were mainly sharing the rumors that she has identified as unemployed and mocking her statement earlier on Bud Light a “fratty, out-of-touch” brand. 
+
+            </p>
+
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">...Alissa Heinerscheid, marketing VP, was only in the job for less than a year and declared Bud Light a “fratty, out-of-touch” brand. It may now lose its dominant position as a top selling brand. <a href="https://t.co/LRq6hCCmOJ">https://t.co/LRq6hCCmOJ</a></p>&mdash; Jonathan Turley (@JonathanTurley) <a href="https://twitter.com/JonathanTurley/status/1653449595567865877?ref_src=twsrc%5Etfw">May 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <span class="caption text-muted"
+              >Tweet example about Alissa Heinerschied</span
+            >
+            <p>
+             Adding to existing key opinion leaders, @PeterSweden on Twitter becomes a new active key opinion leader. Peter Sweden, real name Peter Imanuelsen, is a British far-right speaker and activist with 586k followers. 
+            </p>
+            <div class="centered-div">
+              <a href="#!"
+                ><img
+                  class="img-fluid"
+                  src="assets/img/14.png"
+                  alt="KOLs Collector"
+              /></a>
+            </div>
+            <span class="caption text-muted"
+              >Information Tracer- KOL collector</span
+            >
+            <p>
+              From the $BUD trading volume and the interactions on Twitter and Facebook, there are two spikes right after Ben Shapiro and Peter Sweden sent out feeds on April 27th and Aprth 28th respectively. 
+            </p><img
+                class="img-fluid"
+                src="assets/img/15.png"
+                alt="social network"
+            />
+
+            <p>
+             On April 27th, Mulvaney addressed the uproar over her Bud Light partnership for the first time in a front-facing social media video. After what must have been a truly surreal month of watching transphobes shoot cans of Bud Light over a simple ad, Mulvaney said that she felt “very dissociative” during the preceding weeks.
+            </p>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/Crjsyl1rkn7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/Crjsyl1rkn7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/Crjsyl1rkn7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Dylan Mulvaney (@dylanmulvaney)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+                        <span class="caption text-muted"
+              >Dylan's Response after His Last Bud Light Video</span
+            >
+            <p>However, AB InBev still has not directly addressed the reduction in sales yet but confirmed in a statement that Alissa Heinerscheid and Daniel Blake, who oversees marketing for Anheuser-Busch’s mainstream brands, were on a leave of absence. This news inevitably became a compromise to the boycott. More trendy videos on TikTok and Twitter showed people smashing, throwing away, and even running over Bud Light bottles. The situation took a darker turn with threats directed at Anheuser-Busch factories, including bomb threats that forced some facilities to close. </p>
+            <p>
+              Adding the executive shakeup to the continuous reduction in sales and pressure from conservative investors, institutions and hedge funds decided to exit their shares. <strong>Within two weeks, 11 institutions and hedge funds exited their shares completely according to AB InBev’s 13F filings on June 30th, 2023</strong>. 
+            </p>
+            <div class="centered-div">
+              <a href="#!"
+                ><img
+                  class="img-fluid"
+                  src="assets/img/16.png"
+                  alt="13F Fillings"
+              /></a>
+            </div>
+            <span class="caption text-muted"
+              >AB InBev's 13F filings details on June 30th, 2023</span
+            >
+            <p>
+              On the other hand, the second most popular beer company Molson Coors became the direct beneficiary. On major social media, the Bud Light boycotting masses called for the public to choose Coors Lite and Miller Light as alternatives to Bud Light, <strong>which led Molson Coors 50% increase in sales and over 10% increase in stock price $TAP </strong>.
+            </p>
+           
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Absolutely insane. The Bud Light boycott is working.<br><br>Bud Light sales (outside of restaurants and bars) are down 26.1% for the week ending in April 22nd compared to the previous year.<br><br>Sales were down 21.1% for the week prior.<br><br>Volumes are down 8% for the year.<br><br>Coors Light and… <a href="https://t.co/8lM7Y0MwMT">pic.twitter.com/8lM7Y0MwMT</a></p>&mdash; Collin Rugg (@CollinRugg) <a href="https://twitter.com/CollinRugg/status/1653384799980224512?ref_src=twsrc%5Etfw">May 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <span class="caption text-muted"
+              >Tweet example about Coors Light, Miller Lite and Bud Light
+              </span>
+             <p>
+              Here is a summary of the shift between $BUD and $TAP and the related events:
+            </p>
+                        <div class="centered-div">
+              <a href="#!"
+                ><img
+                  class="img-fluid"
+                  src="assets/img/18.png"
+                  alt="Price Change"
+              /></a>
+            </div>
+            <h5>Third drop (May 4th to May 31st)</h5>
+            <p>
+             During this period, the stock price experienced the largest <strong>drop by 30% </strong>due to a series of harmful events and bad management decisions:
+            </p>
+            <div class="centered-div">
+              <a href="#!"
+                ><img
+                  class="img-fluid"
+                  src="assets/img/19.png"
+                  alt="Price Change"
+              /></a>
+            </div>
+            <p>
+</p>
+            <ul>
+              <li>
+                On May 4th, Anheuser-Busch's CEO Michel Doukeris first time publicly disavowed the controversial partnership with Dylan Mulvaney on an earnings call with investors, stating that it was not intended as a marketing campaign. He shifted blame onto an outside advertising agency for approving the partnership without management's awareness. <strong> This announcement came on the heels of another substantial dip in sales, further exacerbating the company's troubles </strong>.
+              </li>
+              <li>
+                On May 10th, the global financial institution HSBC downgraded its rating of $BUD from 'Buy' to 'Hold,' reflecting concerns stemming from the ongoing boycott. <strong> Analyst Carlos Laboy downgraded the beverage stock to hold, saying there are “deeper problems than ABI admits.” </strong>
+              </li>
+              <li>
+                On May 17th, Republican Senators Ted Cruz and Marsha Blackburn initiated a Senate investigation into Anheuser-Busch's partnership with Dylan Mulvaney. They cited specific concerns, such as Mulvaney's use of the word "girlhood" in her TikTok series' title, her self-identification as a girl, and worries regarding whether the partnership was aimed at marketing alcoholic beverages to children. This development added to the mounting pressure on the company.
+              </li>
+              <li>On May 19th, the Human Rights Campaign Foundation revoked Anheuser-Busch's top rating for LGBTQ+ equality, citing the company's failure to support Dylan Mulvaney during the boycott. <strong>The move marks a significant setback for the company's image and standing in the LGBTQ+ inclusion space.</strong></li>
+              <li>By the end of May, Bud Light lost its long-held status as <strong>the top-selling beer in the United States, a position it had maintained for two decades</strong>. Modelo Especial emerged as the new top-selling beer during this period of upheaval.</li>
+            </ul>
+            <p>
+           During this third drop period, the key opinion leaders group added Rogan O’Handley with <strong>2.4 million followers on Instagram</strong> and Benny Johnson <strong>with 1.4 million followers on Twitter</strong>, who are both conservative commentators. And each one posted over 5 posts in the month related to the Boycott of Bud Light with over 265,000 and 77,000 interactions on average respectively. 
+            </p>
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨Anheuser-Busch CEO FINALLY disavows Dylan Mulvaney Bud Light partnership and says &#39;it was not a campaign&#39; after firm sent letter to retailers blaming an outside ad agency for approving it &#39;without management awareness&#39; as sales crash 26% <a href="https://t.co/dFEJWJHWWK">https://t.co/dFEJWJHWWK</a></p>&mdash; Benny Johnson (@bennyjohnson) <a href="https://twitter.com/bennyjohnson/status/1654153011109740545?ref_src=twsrc%5Etfw">May 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <span class="caption text-muted"
+              >Tweet from Benn Johnson
+              </span>
+            <h3>Stage 2: Summary of Three Drops</h2>
+            <p>To conclude these three drops, we can see that they demonstrate a compelling picture of the substantial impact of social media and public sentiment on financial markets. The severe decline in stock price, the loss of Bud Light's long-held top-selling status, withdrawals from investors and the erosion of the company's reputation can be seen as the ongoing consequence of the trendy boycott of Bud Light on major social media.
+
+</p>
+            <div class="centered-div">
+              <a href="#!"
+                ><img
+                  class="img-fluid"
+                  src="assets/img/20.png"
+                  alt=Interaction network"
+              /></a>
+              <span class="caption text-muted"
+              >Information Tracer - Interaction network</span
+            >
+            </div>
+<p>Moreover, from the beginning of the boycott till now, as a testament to the impact of the boycott, phrases like "Bud Lighted," "Bud Lighting," and "Go woke, go broke" have been circulating on the Internet. The phrases describe a boycott strategy designed to challenge so-called "rainbow capitalism," branding corporations as "awakeners" and calling for a boycott of issues ranging from Adidas' gender-inclusive swimsuits to The North Face's marketing campaign featuring drag queen and environmentalist Pattie Gonia.
+</p>
+            <h3>Stage 3: Tips for similar Insidents in the Future</h3>
+            <p>
+Following the methodology used to analyze the Boycott of Bud Light, there is a possibility to detect similar incidents in the future.</p>
+<p>By using social media collector tools like informative tracer, we are able to quickly locate the key opinion leaders and related hashtags at the beginning of the event . <strong>Since key opinion leaders and hashtags are less likely to change throughout the entire incident, we can collect them as soon as possible and analyze the feed sentiments from them, which would largely determine the potential trends related to the stock price</strong>. </p>     
+ <p>Even though there may be a lot of fake news, there is a rule of thumbs, <strong>“Buy on rumors, sell on news,”</strong> so if we can tell the consistent sentiments from key opinion leaders or hashtags like Bud Light Boycott, then there is a way to go. However, it is necessary to follow other factors like market performance, industry trends, company earnings and company changes while we keep tracking the updates from key opinion leaders and hashtags. Eventually, we will have a much higher probability to make a great profit based on the information we have.
+            </p>
+            <h3>Conclusion</h3>
+            <p>
+              As we conclude our exploration of the intriguing correlation between social media posts and stock price changes, it becomes abundantly clear that the impact of the online world on financial markets is profound and undeniable. Our journey through the realms of behavioral economics, influential figures in the social media landscape, real-world case studies, and the intricacies of causation versus correlation has shed light on the complex dynamics at play. By using the similar analytics techniques on social media, we can possibly ride on the trends with great profits.
+
+            </p>
+            <h2 class="section-heading">Further Readings</h2>
+            <br />
+            <ul>
+              <li>
+                 <a href="https://www.macroaxis.com/performance/BUD/Anheuser-Busch-Inbev"
+                    >              <u>What is Anheuser Busch (USA Stocks:BUD) stock performance? 54.02 Down 0.57% </u></a>
+              </li>
+              <li>
+                <a href="https://fintel.io/so/us/bud?d=2023-06-30"> <u>AB InBev's 13F Fillings</u></a>
+              </li>
+              <li>
+                <a href="https://www.them.us/story/dylan-mulvaney-bud-light-drama-explained"><u>The Dylan Mulvaney and Bud Light Fiasco: Everything You Need to Know | Them</u></a>
+              </li>
+              <li>
+                Learn about
+                <u>
+                  <a href="https://github.com/zhouhanc/informationtracer"
+                    >how to use Information Tracer API
+                  </a>
+                </u>
+              </li>
+              <li>
+                Interested in
+                <u>
+                  <a
+                    href="https://github.com/zhouhanc/superset-information-tracer"
+                    >deploying your own dashboard
+                  </a> </u
+                >for keyword monitoring?
+              </li>
+              <li>
+                Our
+                <u>
+                  <a
+                    href="https://conecta.tec.mx/es/noticias/nacional/educacion/docentes-de-tec-y-nyu-crean-plataforma-que-analiza-redes-en-elecciones"
+                    >media coverage</a
+                  >
+                </u>
+              </li>
+              </li>
+            </ul>
+            <br />
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul> -->
+            <div class="small text-center text-muted fst-italic">
+              Copyright &copy; Information Tracer 2023
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
